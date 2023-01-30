@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+}
+.container {
+    border: 0.3rem solid black;
+    height: 300px;
+    display: flex;                  /*acomoda los divs horizontalmente por defecto*/
+    /*flex-direction: column;       /*acomoda los divs verticalmente*/
+    /*flex-direction: row-reverse;  /*acomoda los divs horizontalmente pero en reversa*/
+    flex-wrap: wrap;                /*cuando los divs no caben en un renglon los empieza a bajar a un siguiente renglon a partir del ultimo*/
+    align-content: center;          /*acomoda los divs de forma vertical*/
+    justify-content: center;        /*acomoda los div de forma horizontal*/
+    /*justify-content: flex-start;  /*acomoda los divs al inicio (izquierda o arriba dependiendo de flex-direction) respetando el flex-basis de los divs*/
+    /*justify-content: flex-end;    /*acomoda los divs al final (derecha o abajo dependiendo de flex-direction) respetando el flex-basis de los divs*/
+    /*justify-content: space-between;  /*acomoda los divs repartidos variando el espacio entre los divs sin dejar espacio al inicio y al final*/
+    /*justify-content: space-around    /*acomoda los divs repartidos variando el espacio entre los divs dejando tambien espacio al inicio y al final*/
+    /*justify-content: stretch      /*acomoda los div estirando los divs internos a lo largo del contenedor*/
+}
+.box {
+    height: 10rem;
+    flex-basis: 15rem;              /*medida base(ancho) de los divs*/
+    
+}
+.box1 {
+    background-color: blue;
+    flex-grow: 1;                   /*si el viewport va creciendo este div interno crecera con el para ocupar entre todos los divs el 100% del viewport*/
+}
+.box2 {
+    background-color: blueviolet;
+    /*estas 3 son para alinear el contenido interno de un item con flex*/
+    /*display: flex;			
+    justify-content: center;
+    align-items: center;*/
+}
+.box3 {
+    background-color: burlywood;
+}
+.box4 {
+    background-color: cadetblue;
+}
+.box5 {
+    background-color: coral;
+}
+.box6 {
+    background-color: salmon;
+}

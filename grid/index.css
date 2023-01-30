@@ -1,0 +1,162 @@
+.contenedor1{
+    border:5px solid #e1bee7;
+    background-color:#fff1ff;
+}
+/**************************************************************************************/
+.contenedor2{
+    border:5px solid #e1bee7;
+    background-color:#fff1ff;
+    display:grid;
+    grid-template-columns:50px 100px 200px; /*Numero de columnas y ancho de cada una*/
+    grid-template-rows:100px 50px;          /*Numero de renglones y alto de cada uno*/
+    gap:15px;                               /*espacio entre las celdas de la grilla*/  
+}
+/**************************************************************************************/
+.contenedor3{
+    height: 600px;
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    row-gap: 15px;                          /*espacio entre renglones*/
+    grid-template-columns: 150px 150px 150px;/*3 columnas*/
+    grid-auto-rows: 150px;                  /*El numero de renglones lo genera en base al numero de elementos dentro del contenedor*/
+    grid-auto-flow: row;                    /*habilitar el flujo y como se llena la grilla, como complemento de la linea anterior*/
+    place-content: center;                  /*las divs dentro del contenedor estaran al centro vertical y horizontal*/
+    place-items: end;                       /*el contenido de las divs estara abajo a la derecha*/
+}
+/**************************************************************************************/
+.contenedor4{
+    height: 600px;
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    column-gap: 15px;                       /*espacio entre columnas*/
+    grid-template-rows: 200px 200px;        /*2 renglones*/
+    grid-auto-columns: 150px;               /*El numero de columnas lo genera en base al numero de elementos dentro del contenedor*/
+    grid-auto-flow: column;                 /*habilitar el flujo y como se llena la grilla, como complemento de la linea anterior*/
+    place-content: center;                  /*las divs dentro del contenedor estaran al centro vertical y horizontal*/
+    place-items: start;                     /*el contenido de las divs estara arriba y a la izquierda*/
+}
+.item{
+    border:5px solid #00bcd4;
+    font-size:2rem;
+}
+
+.item2{
+    border:5px solid #00bcd4;
+    font-size:2rem;
+    justify-self: start;    		/*Justificacion y alineacion para este elemento, no todos los de la grilla*/
+    align-self: end;
+}
+/*
+    Propiedades de alineacion del contenedor, para alinear la grilla dentro del contenedor
+    center, start, end
+
+    justify-content:center  		//horizontalmente
+    align-content:center    		//verticalmente
+    place-content:center    		//horizontal y vertical
+
+    Propiedades de alineacion del contenido de los items o divs dentro del contenedor grid
+    center, start, end
+
+    justify-self:start;
+    align-self:center
+    justify-items: center;
+    align-items: center;
+    place-items: start;
+*/
+/**************************************************************************************/
+.contenedor5{
+    height: 600px;
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    gap: 15px;                      
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px;        
+    place-content: center;
+}
+
+/*Para el contenedor 5 divs que ocupan mas de una celda de la grilla*/
+.item-5-1{
+
+    grid-column-start: 1;   		/*linea de la columna en la que inicia*/
+    grid-column-end: 3;     		/*linea de la columa en la que termina*/
+}
+.item-5-2{
+    grid-row: 2 / 4;        		/*en una sola linea se define en que linea empieza y en que linea termina*/
+
+    
+    /*estas 3 son para alinear el contenido de un item con flex*/
+    /*display: flex;			
+    justify-content: center;
+    align-items: center;*/
+    
+    /*estas 3 son para alinear el contenido de un item con grid*/
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.item-5-3{
+    grid-area: 2 / 2 / 4 / 4;   	/*file columna fila columna*/
+}
+/**************************************************************************************/
+.contenedor6{
+    height: 600px;
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    gap: 15px;                      
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px; 
+    grid-template-areas: 
+        "header header header"
+        "side   main   main"
+        "side   main   main";
+    place-content: center;
+}
+
+/*Para el contenedor 5 divs que ocupan mas de una celda de la grilla*/
+.item-6-1{
+    grid-area: header;
+}
+.item-6-2{
+    grid-area: side;
+}
+.item-6-3{
+    grid-area: main;
+}
+/**************************************************************************************/
+.contenedor7{   /*con minmax las columnas cambiaran de ancho entre ese rango*/
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: minmax(100px, 200px) minmax(100px, 300px) minmax(100px, 200px);
+    grid-template-rows: repeat(3, auto);    	/*repite 3 veces, una por renglon - auto no define un alto fijo, sino que se ajusta al contenido*/
+}
+/**************************************************************************************/
+.contenedor8{   /*con fr las columnas se ajustan al ancho del viewport*/
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  	/*4 columnas de 1 fraccion del viewport cada una*/
+    /*grid-template-columns: 1fr 3fr 2fr 1fr;   de diferentes fracciones cada columna*/
+    /*grid-template-columns: 1fr 3fr min-content 1fr;   una columna con el ancho minimo necesario para que el contenido se muestre bien*/
+    /*grid-template-columns: 1fr 3fr max-content 1fr;   una columna con el ancho maximo necesario para que el contenido se muestre en un renglon*/
+}
+/**************************************************************************************/
+.contenedor9{   /*con auto-fit las columnas ocupan el "max" para llenar el 100% del ancho del viewport*/
+    /*cuando el ancho del viewport es menor que el min del las columnas pasa celdas al siguiente renglon*/
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /*siempre que se use auto-fit debe ponerse minmax*/
+}
+/**************************************************************************************/
+.contenedor10{   /*con auto-fill las columnas ocupan el "min" y queda vacio el resto del viewport*/
+    /*cuando el ancho del viewport es menor que el min del las columnas pasa celdas al siguiente renglon*/
+    border: 5px solid #e1bee7;
+    background-color: #fff1ff;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));/*siempre que se use auto-fill debe ponerse minmax*/
+} 

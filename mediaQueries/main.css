@@ -1,0 +1,29 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+html{
+    font-size:62.5%
+}
+/*Aqui se definen las media queries, pero no es tan recomendable*/
+/*lo mejor es definir las media queries en el html y hacer link al archivo css*/
+/*dependiendo del ancho del viewport*/
+
+/*Mobile first:  todos los estilos iniciales son para mobile, menos de 480 en este caso*/
+
+
+/*para dispositivos con pantalla minimo de 480px*/
+@media (min-width: 480px){
+
+}
+
+/*para dispositivos con pantalla minimo de 768px*/
+@media (min-width: 768px){
+
+}
+
+/*para dispositivos con pantalla minimo de 1024px*/
+@media (min-width: 1024px){
+
+}
